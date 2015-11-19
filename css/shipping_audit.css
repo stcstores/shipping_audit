@@ -1,0 +1,29 @@
+@font-face {
+    font-family: bretan;
+    src: url('Bretan.otf') format('opentype');
+}
+
+html, body {
+    padding: 0;
+    font-family: bretan;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.pagebox {
+    padding: 1em;
+    font-size: 1.25em;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.align_right {
+    text-align: right;
+}
+
+.error {
+    color: red;
+    margin: 0.1em;
+    padding: 0;
+    /*font-weight: bold;*/
+}
