@@ -9,8 +9,8 @@ function checkLogin()
             return true;
         }
     }
-    //header('location:/logout.php');
-    //exit();
+    header('location:logout.php');
+    exit();
 }
 
 function login($username, $password)
@@ -45,7 +45,6 @@ function getUserId($username, $password)
 
 function make_request($url, $data)
 {
-    echo $url;
     $curl = curl_init();
     $headers = array(
         'Content-Type: application/json',
@@ -58,10 +57,9 @@ function make_request($url, $data)
     curl_setopt(
         $curl,
         CURLOPT_CAINFO,
-        $_SERVER['DOCUMENT_ROOT'] . '/shipping_audit/certificates/thawtePrimaryRootCA.crt'
+        $_SERVER['DOCUMENT_ROOT'] . '/shipping_audit/lib/LinnworksAPI/thawtePrimaryRootCA.crt'
     );
     $dataString = http_build_query($data);
-    //echo $dataString;
     curl_setopt($curl, CURLOPT_URL, $url . '?' . $dataString);
     $response = curl_exec($curl);
     echo curl_error($curl);

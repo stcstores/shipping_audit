@@ -8,7 +8,6 @@ if (isLoggedIn()) {
     header('Location:/shipping_audit');
 }
 
-print_r($_POST);
 if ((isset($_POST['username'])) && (isset($_POST['password']))) {
     if (login($_POST['username'], $_POST['password'])) {
         header('Location:/shipping_audit');
